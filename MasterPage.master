@@ -1,0 +1,252 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+    
+<!DOCTYPE html>
+<html>
+<head  runat="server">
+
+
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H&M</title>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+	<link rel="stylesheet" href="css/extra.css" />
+    <link rel="stylesheet" href="css/flag-icon.min.css" />
+    <link href="web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+	
+	
+	<link rel="stylesheet" href="css/material icons.css"/>
+     
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+
+	<script src="loading.js"></script>
+	
+</head>
+
+<body>
+     <form id="form1" runat="server">
+        <% if (HttpContext.Current.Request.Url.AbsolutePath == "/LoginPage.aspx")
+            { %>
+<style>
+   body { 
+       
+       
+        background-image: url("/images/SingaporeRivers.jpg");
+        background-size:auto;
+        overflow-x:hidden;
+        background-position:center;
+       
+    }
+</style>
+        <%} %>
+         <%else if (HttpContext.Current.Request.Url.AbsolutePath == "/RegisterPage.aspx")
+            { %>
+<style>
+   body { 
+       
+       overflow-x:hidden;
+       
+        background-image: url("/images/SingaporeRivers.jpg");
+        background-size:cover;
+        background-position:center;
+        
+    }
+</style>
+        <%} %>
+        <% else
+    { %>
+        <style>
+   body { 
+       overflow-x:hidden;
+        background-color:white;
+        background-size:cover;
+        
+
+    }
+</style>
+        <%} %>
+
+        
+<div class="animatecontainer p-0 m-0" id="animatecontainer">
+<div class="loading1" id="loading1"> <div class="slider1"></div>  <div class="sliderup1"></div></div>
+<div class="loading2" id="loading2"> <div class="slider2"></div> <div class="sliderup2"></div></div>
+<div class="loading3" id="loading3"> <div class="slider3"></div>  <div class="sliderup3"></div></div>
+<div class="loading4" id="loading4"> <div class="slider4"></div>  <div class="sliderup4"></div></div>
+<div class="loading5" id="loading5"> <div class="slider5"></div> <div class="sliderup5"></div></div>
+<div class="loading6" id="loading6"> <div class="slider6"></div>  <div class="sliderup6"></div></div>
+<div class="loading7" id="loading7"> <div class="slider7"></div>  <div class="sliderup7"></div></div>
+<div  class="loading8" id="loading8"> <img  style="display:none;" id="logo" src="images/logonew white.png" > <div class="slider8"></div>  <div class="sliderup8"></div></div>
+<div class="loading9" id="loading9"> <div class="slider9"></div>  <div class="sliderup9"></div></div>
+<div class="loading10" id="loading10"> <div class="slider10"></div> <div class="sliderup10"></div></div>
+<div class="loading11" id="loading11">   <div class="sliderup11"></div></div>
+<div class="loading12" id="loading12">   <div class="sliderup12"></div></div>
+<div class="loading13" id="loading13">   <div class="sliderup13"></div></div>
+<div class="loading14" id="loading14">   <div class="sliderup14"></div></div>
+<div class="loading15" id="loading15">   <div class="sliderup15"></div></div>
+</div>
+      
+	<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white border-bottom border-standard-pink py-0 ">
+ <img class="navbar-brand" src="images/logonew.png" style="width:60px;height:auto;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="navbar-nav justify-content-around w-100 pt-3 ">
+      
+        <a class="nav-link nav-item active gunplay" href="Default.aspx">Home </a>
+        <a class="nav-link nav-item gunplay" href="#">About</a>
+		 <a class="nav-link nav-item gunplay" href="#">Promotions</a>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle gunplay" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item gunplay" href="#">Hats</a>
+                <a class="dropdown-item gunplay" href="#">Shirts</a>
+                <a class="dropdown-item gunplay" href="#">Pants</a>
+                <a class="dropdown-item gunplay" href="#">Shoes</a>
+                <a class="dropdown-item gunplay" href="#">Accessories</a>
+            </div>
+        </li>
+           
+     
+	 <a class="nav-link nav-item gunplay" href="#">Contact</a>
+        
+	 <li class="nav-item dropdown ">
+	 <a href="#" class="nav-link gunplay dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account <img src="images/walk the moon.jpg" style="width:24px;padding-bottom:6px;border-radius:40px;"></a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<a class="dropdown-item gunplay" href="#">Test1</a>
+<a class="dropdown-item gunplay" href="#">Test2</a>
+</div>
+</li>
+           
+ <a class="nav-link nav-item" href="ShoppingCart.aspx" ><i id="button" class="material-icons" lang="en">shopping_cart</i></a>
+   
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%if (flag == "SG")
+                {%>
+            <asp:Button ID="Button1" runat="server" class="flag-icon flag-icon-sg" onClick ="Button1_Click" BorderStyle="None"/>
+            <%} %>
+            <%else if (flag == "MY")
+                { %>
+            
+          <asp:Button ID="Button2" runat="server" class="flag-icon flag-icon-my" onClick ="Button2_Click" BorderStyle="None"/>
+            <%} %>
+            <%else if (flag == "IN")
+                { %>
+          <asp:Button ID="Button3" runat="server" class="flag-icon flag-icon-id" onClick ="Button3_Click" BorderStyle="None"/>
+            <%} %>
+            <%else if (flag == "TH")
+                { %>
+          <asp:Button ID="Button7" runat="server" class="flag-icon flag-icon-th" onClick ="Button7_Click" BorderStyle="None"/>
+            <%} %>
+             <%else if (flag == "VT")
+                { %>
+          <asp:Button ID="Button8" runat="server" class="flag-icon flag-icon-vn" onClick ="Button8_Click" BorderStyle="None"/>
+            <%} %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-item">
+           <button ID="Button4" runat="server" class="flag-icon flag-icon-sg" onserverclick ="Button1_Click" style="border:none;"></button><a runat="server" onserverclick="Button1_Click"> SGD</a>
+                </div>
+             <div class="dropdown-item">
+        <button ID="Button5" runat="server" class="flag-icon flag-icon-my" onserverclick ="Button2_Click" style="border:none;" ></button><a runat="server" onserverclick="Button2_Click"> MYR</a>
+                 </div>
+             <div class="dropdown-item">
+		    <button ID="Button6" runat="server" class="flag-icon flag-icon-id" onserverclick ="Button3_Click" style="border:none;"></button><a runat="server" onserverclick="Button3_Click"> IDR</a>
+                 </div>
+             <div class="dropdown-item">
+             <button ID="Button9" runat="server" class="flag-icon flag-icon-th" onserverclick ="Button7_Click" style="border:none;"></button><a runat="server" onserverclick="Button7_Click"> THB</a>
+                 </div>
+             <div class="dropdown-item">
+             <button ID="Button10" runat="server" class="flag-icon flag-icon-vn" onserverclick ="Button8_Click" style="border:none;"></button><a runat="server" onserverclick="Button8_Click"> VND</a>
+        </div>
+      </li>
+       
+	 <div class="form-inline pb-2">
+	 
+      <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+      <button  id="button" class="btn btn-light text-white " type="submit"><i  id="button" class="material-icons md-dark" lang="en">search</i></button>
+    </div>
+	  </div>
+    
+	
+    
+  </div>
+</nav>
+
+    
+    <!---- Carousel --->
+    <asp:ContentPlaceHolder ID="Content1" runat="server" />
+
+
+        
+    
+<div  class="container-fluid  px-0 py-5 bg-white text-center" style="position:absolute;">
+<p  style="font-family:arial;color:#black;"> &#169; 2018 H&M | Created by Team Syndicate | Privacy Policy | Terms & Conditions</p>
+<div class="row">
+  
+    <div class="col-2">
+        <h4 style="font-weight:bold;text-decoration:underline;">Company</h4>
+        <p>About Us</p>
+        <p>Policies</p>
+        <p>Corporate</p>
+    </div>
+        <div class="col-1"></div>
+    <div class="col-2">
+        <h4 style="font-weight:bold;text-decoration:underline;">Services</h4>
+        <p>Terms & Conditions</p>
+        <p>Shipping & Delivery</p>
+        <p>Exchange & Refund</p>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-2">
+        <h4 style="font-weight:bold;text-decoration:underline;">Customer Care</h4>
+        <p>Payment Information</p>
+        <p>Contact Us</p>
+        <p>Help Centre</p>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3">
+        <h4 >Sign Up For Newsletter</h4>
+        
+        <div class="form-inline justify-content-center pb-1">
+	 
+      <input  class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+      <button  id="button" class="btn btn-light text-white " type="submit"><i id="button" class="material-icons md-dark" lang="en">mail</i></button>
+           
+    </div>
+         <img style="width:100%;" src="images/Delivery.png" />
+        
+    </div>
+        
+    
+</div>
+    <div class="row pb-4   justify-content-around">
+      
+            <i id="button" class="fab fa-facebook-square fa-3x"></i>
+          
+            <i  id="button" class="fab fa-twitter-square fa-3x"></i>
+             
+             <i id="button" class="fab fa-tumblr-square fa-3x"></i>
+      
+             <i  id="button" class="fab fa-instagram fa-3x"></i>
+      
+             <i id="button" class="fab fa-youtube-square fa-3x"></i>
+      
+</div>
+    </div>
+         
+          
+        
+        </form>
+
+
+</body>
+</html>
+    
+
